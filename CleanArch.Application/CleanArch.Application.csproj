@@ -7,11 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CleanArch.Domain\CleanArch.Domain.csproj" />
+    <ProjectReference Include="..\CleanArch.Infra.Data\CleanArch.Infra.Data.csproj" />
   </ItemGroup>
 
 </Project>
