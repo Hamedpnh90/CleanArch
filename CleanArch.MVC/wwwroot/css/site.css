@@ -16,3 +16,43 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.course-content{
+    padding:24px;
+}
+
+.Course-Img {
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    height:220px;
+    width:220px;
+
+}
+.Course-Img-Container {
+    padding: 8px;
+    background-color: white;
+    position: relative;
+    display: inline-block;
+    height: 240px;
+    width: 250px;
+    margin: 12px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    box-shadow: 0 10px 18px 0 rgba(0,0,0,0.2), 0 5px 5px 0 rgba(0,0,0,0.2);
+}
+
+h2 {
+    font-size: 15px;
+    margin: 0 10 0 0;
+    padding: 0 10 0 0;
+}
+a {
+    display:block;
+    color: #252a2b;
+    padding: 0 10px;
+    position:relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: blink;
+}
