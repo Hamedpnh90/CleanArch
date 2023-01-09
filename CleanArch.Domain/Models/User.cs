@@ -7,15 +7,20 @@ using System.Threading.Tasks;
 
 namespace CleanArch.Domain.Models
 {
-    public class Course
+    public class User
     {
         [Key]
-        public int Id { get; set; }
+        public int UserId { get; set; }
+
         [Required]
-        public string Name { get; set; }
+        [MaxLength(100)]
+        public string UserName { get; set; }
         [Required]
-        public string Description { get; set; }
+        [MaxLength(200)]
+        public string UserEmail { get; set; }
         [Required]
-        public string ImageUrl { get; set; }
+        [MaxLength(200)]
+        public string PassWord { get; set; }
+
     }
 }

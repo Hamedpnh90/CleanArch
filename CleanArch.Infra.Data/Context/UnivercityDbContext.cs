@@ -16,7 +16,8 @@ namespace CleanArch.Infra.Data.Context
 
         }
 
-        public DbSet<Course> Courses { get; set; }
+        public virtual DbSet<Course> Courses { get; set; }
+        public virtual DbSet<User> user { get; set; }
     }
 }
 

@@ -27,6 +27,8 @@ body {
     background-position:center;
     height:220px;
     width:220px;
+    border:solid 2px;
+    padding:10px;
 
 }
 .Course-Img-Container {
