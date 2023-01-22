@@ -17,9 +17,11 @@ namespace CleanArch.InfraIoc
         {
             //App Layer
             services.AddScoped<ICourseServices, CourseServices>();
+            services.AddScoped<IUserServices, UserServices>();
 
             //Data Layer
             services.AddScoped<ICourseRepository,CourseRepository>();
+            services.AddScoped<IUserRepository ,UserRepository>();
         }
     }
 }

@@ -1,0 +1,103 @@
+﻿@using static CleanArch.Application.ViewModels.CheckUserEnum
+@using static CleanArch.Application.ViewModels.AccountViewModel
+@model RegisterViewModel
+
+
+
+
+<div>
+    @if (ViewBag.check != null)
+    {
+        CheckUser check = (CheckUser)ViewBag.check;
+
+        switch (check)
+        {
+            case CheckUser.EmailExicted:
+                {
+                    <div class="alert alert-danger">
+                        <ul>
+                            <li>
+                                Email Is Invalid
+                            </li>
+                        </ul>
+                    </div>
+
+                    break;
+                }
+
+                 case CheckUser.UserAndEmailNotValid:
+                {
+                    <div class="alert alert-danger">
+                        <ul>
+                            <li>
+                                Email And User Is Invalid
+                            </li>
+                        </ul>
+                    </div>
+
+                    break;
+                }
+
+                 case CheckUser.USerExisted:
+                {
+                    <div class="alert alert-danger">
+                        <ul>
+                            <li>
+                                User Is Invalid
+                            </li>
+                        </ul>
+                    </div>
+
+                    break;
+                }
+        }
+    }
+
+
+    <div class="col-md-12">
+
+
+        <form asp-action="Register">
+            <div class="form-group">
+                <label asp-for="UserEmail" class="Control-label"></label>
+                <input asp-for="UserEmail" class="form-control" />
+                <span asp-validation-for="UserEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserName" class="Control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PassWord" class="Control-label"></label>
+                <input asp-for="PassWord" class="form-control" />
+                <span asp-validation-for="PassWord" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RePassWord" class="Control-label"></label>
+                <input asp-for="RePassWord" class="form-control" />
+                <span asp-validation-for="RePassWord" class="text-danger"></span>
+
+
+            </div>
+
+            <div class="form-group">
+
+                <input type="submit" class="btn btn-success btn-block" value="Create" />
+
+
+
+            </div>
+
+
+        </form>
+
+
+    </div>
+</div>
+
+@section scripts{
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}
