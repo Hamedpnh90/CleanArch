@@ -13,7 +13,9 @@ namespace CleanArch.Domain.Interfaces
 
         bool IsUserExist(string UserName);
 
-        bool IsEmailExist(string UserEmail);
+        bool ISEmailExist(string UserEmail);
+
+        bool IsUserValid(string password,string email);
 
         void Save();
     }

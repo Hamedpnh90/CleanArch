@@ -14,13 +14,15 @@ namespace CleanArch.Domain.Models
 
         [Required]
         [MaxLength(100)]
-        public string UserName { get; set; }
+        public string? UserName { get; set; }
         [Required]
         [MaxLength(200)]
-        public string UserEmail { get; set; }
+        public string? UserEmail { get; set; }
         [Required]
         [MaxLength(200)]
-        public string PassWord { get; set; }
+        public string? PassWord { get; set; }
+
+        public bool RememberMe { get; set; }
 
     }
 }

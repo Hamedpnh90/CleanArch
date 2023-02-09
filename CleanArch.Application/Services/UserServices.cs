@@ -1,4 +1,5 @@
 ﻿using CleanArch.Application.Interfaces;
+using CleanArch.Application.Security;
 using CleanArch.Application.ViewModels;
 using CleanArch.Domain.Interfaces;
 using CleanArch.Domain.Models;
@@ -28,7 +29,7 @@ namespace CleanArch.Application.Services
 
         public CheckUserEnum.CheckUser checkUser(string UserName, string Email)
         {
-           bool Emailnotvalid=_UserRepository.IsEmailExist(Email);
+           bool Emailnotvalid=_UserRepository.ISEmailExist(Email.Trim().ToLower());
            bool UserNotValid=_UserRepository.IsUserExist(UserName);
             if(Emailnotvalid && UserNotValid)
             {
@@ -44,6 +45,11 @@ namespace CleanArch.Application.Services
             }
 
             return CheckUserEnum.CheckUser.Ok;   
+        }
+
+        public bool IsUserExist(string password, string Email)
+        {
+            return _UserRepository.IsUserValid(PasswordHelper.EncodePasswordMd5(password), Email.Trim().ToLower());
         }
     }
 }

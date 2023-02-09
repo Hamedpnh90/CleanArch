@@ -22,7 +22,7 @@ namespace CleanArch.Infra.Data.Repository
             _Context.user.Add(user);
         }
 
-        public bool IsEmailExist(string UserEmail)
+        public bool ISEmailExist(string UserEmail)
         {
           return  _Context.user.Any(E=>E.UserEmail == UserEmail); 
         }
@@ -30,6 +30,11 @@ namespace CleanArch.Infra.Data.Repository
         public bool IsUserExist(string UserName)
         {
           return  _Context.user.Any(u=>u.UserName == UserName);
+        }
+
+        public bool IsUserValid(string password, string email)
+        {
+            return _Context.user.Any(u => u.PassWord == password && u.UserEmail == email);
         }
 
         public void Save()

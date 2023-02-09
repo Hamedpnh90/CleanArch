@@ -27,5 +27,18 @@ namespace CleanArch.Application.ViewModels
            [Compare("PassWord")]
             public string RePassWord { get; set; }
         }
+
+
+        public class LoginViewModel
+        {
+            [Required]
+            [MaxLength(200)]
+            public string UserEmail { get; set; }
+            [Required]
+            [MaxLength(200)]
+            public string PassWord { get; set; }
+
+            public bool RememberMe { get; set; }
+        }
     }
 }
